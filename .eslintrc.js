@@ -108,34 +108,6 @@ module.exports = {
         ],
         'no-useless-constructor': 'off',
         '@typescript-eslint/no-useless-constructor': 'warn',
-        'import/order': [
-          'error',
-          {
-            alphabetize: {
-              order: 'asc',
-              caseInsensitive: true,
-            },
-            groups: ['builtin', 'external', ['internal', 'parent'], ['sibling', 'index']],
-            pathGroups: [
-              {
-                pattern: 'react',
-                group: 'external',
-                position: 'before',
-              },
-              {
-                pattern: '~**',
-                group: 'internal',
-                position: 'before',
-              },
-              {
-                pattern: '~**/**',
-                group: 'internal',
-                position: 'before',
-              },
-            ],
-            pathGroupsExcludedImportTypes: [],
-          },
-        ],
       },
     },
   ],
@@ -327,6 +299,34 @@ module.exports = {
     'jsx-a11y/scope': 'error',
     // https://github.com/facebook/react/tree/master/packages/eslint-plugin-react-hooks
     'react-hooks/rules-of-hooks': 'error',
+    'import/order': [
+      'error',
+      {
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
+        },
+        groups: ['builtin', 'external', ['internal', 'parent'], ['sibling', 'index']],
+        pathGroups: [
+          {
+            pattern: 'react',
+            group: 'external',
+            position: 'before',
+          },
+          {
+            pattern: '~**',
+            group: 'internal',
+            position: 'before',
+          },
+          {
+            pattern: '~**/**',
+            group: 'internal',
+            position: 'before',
+          },
+        ],
+        pathGroupsExcludedImportTypes: [],
+      },
+    ],
     //prettier
     "prettier/prettier": [
       "error",
