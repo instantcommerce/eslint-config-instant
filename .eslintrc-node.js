@@ -1,20 +1,6 @@
 const path = require('path')
 
 module.exports = {
-  parser: '@typescript-eslint/parser',
-
-  extends: [
-    path.join(__dirname, 'index.js'), 'eslint:recommended',
-    'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
-    'plugin:import/errors',
-    'plugin:import/warnings',
-    'plugin:import/typescript'
-  ],
-
-  plugins: ['import', 'prettier'],
-
   env: {
     browser: false,
     es6: true,
@@ -22,33 +8,27 @@ module.exports = {
     node: true,
   },
 
+  extends: [
+    path.join(__dirname, 'index.js'),
+    'eslint:recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:import/errors',
+    'plugin:import/typescript',
+    'plugin:import/warnings',
+    'plugin:prettier/recommended',
+  ],
+
+  parser: '@typescript-eslint/parser',
+  plugins: ['import', 'prettier'],
+
   parserOptions: {
     ecmaVersion: 2017,
-    sourceType: 'module',
     project: './tsconfig.json',
-  },
-
-  settings: {
-    'import/resolver': {
-      alias: {
-        map: [
-          ['@module', './src/modules'],
-          ['@common', './src/common'],
-          ['@util', './src/util']
-        ],
-        extensions: ['.js', '.ts']
-      },
-      node: {
-        extensions: [".js", ".ts"]
-      }
-    },
-    'import/parsers': {
-      '@typescript-eslint/parser': ['.ts']
-    }
+    sourceType: 'module',
   },
 
   rules: {
-    // overwrite or add rules here
     '@typescript-eslint/explicit-function-return-type': ['off'],
     '@typescript-eslint/explicit-member-accessibility': [1],
     '@typescript-eslint/interface-name-prefix': [0, 'never'],
@@ -91,5 +71,24 @@ module.exports = {
         'useTabs': false
       }
     ]
+  },
+
+  settings: {
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts']
+    },
+    'import/resolver': {
+      alias: {
+        map: [
+          ['@common', './src/common'],
+          ['@module', './src/modules'],
+          ['@util', './src/util']
+        ],
+        extensions: ['.js', '.ts']
+      },
+      node: {
+        extensions: [".js", ".ts"]
+      }
+    },
   },
 };
