@@ -2,6 +2,11 @@
   "name": "eslint-config-ams",
   "version": "1.0.0",
   "main": "index.js",
+  "files": [
+    "index.js",
+    "web.js",
+    "node.js"
+  ],
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
