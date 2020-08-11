@@ -1,4 +1,3 @@
-// inspired by eslint-config-react-app and eslint-config-airbnb
 const path = require('path')
 
 module.exports = {
@@ -26,6 +25,11 @@ module.exports = {
   settings: {
     react: {
       version: 'detect',
+    },
+    'import/resolver': {
+      alias: [
+        ['~', './'],
+      ],
     },
   },
   overrides: [
