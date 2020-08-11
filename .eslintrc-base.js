@@ -259,7 +259,6 @@ module.exports = {
         pathGroupsExcludedImportTypes: [],
       },
     ],
-    //prettier
     "prettier/prettier": [
       "error",
       {

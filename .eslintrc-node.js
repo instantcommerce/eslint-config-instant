@@ -1,43 +1,94 @@
-// inspired by eslint-config-react-app and eslint-config-airbnb
 const path = require('path')
 
 module.exports = {
-  root: true,
-  parser: 'babel-eslint',
-  extends: [path.join(__dirname, 'index.js'), 'prettier/@typescript-eslint', 'prettier'],
+  parser: '@typescript-eslint/parser',
+
+  extends: [
+    path.join(__dirname, 'index.js'), 'eslint:recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+    'plugin:import/typescript'
+  ],
+
   plugins: ['import', 'prettier'],
 
   env: {
-    browser: true,
-    commonjs: true,
+    browser: false,
     es6: true,
     jest: true,
     node: true,
   },
 
   parserOptions: {
-    ecmaVersion: 2018,
+    ecmaVersion: 2017,
     sourceType: 'module',
-    ecmaFeatures: {
-      jsx: true,
-    },
+    project: './tsconfig.json',
   },
 
-  // NOTE: When adding rules here, you need to make sure they are compatible with
-  // `typescript-eslint`, as some rules such as `no-array-constructor` aren't compatible.
+  settings: {
+    'import/resolver': {
+      alias: {
+        map: [
+          ['@module', './src/modules'],
+          ['@common', './src/common'],
+          ['@util', './src/util']
+        ],
+        extensions: ['.js', '.ts']
+      },
+      node: {
+        extensions: [".js", ".ts"]
+      }
+    },
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts']
+    }
+  },
+
   rules: {
     // overwrite or add rules here
+    '@typescript-eslint/explicit-function-return-type': ['off'],
+    '@typescript-eslint/explicit-member-accessibility': [1],
+    '@typescript-eslint/interface-name-prefix': [0, 'never'],
+    '@typescript-eslint/no-explicit-any': 0,
+    '@typescript-eslint/no-namespace': 0,
+    '@typescript-eslint/no-inferrable-types': 0,
 
-
-    "prettier/prettier": [
-      "error",
+    'import/extensions': [
+      1,
+      'never',
       {
-        "printWidth": 120,
-        "semi": true,
-        "singleQuote": true,
-        "tabWidth": 2,
-        "trailingComma": "all",
-        "useTabs": false
+        'svg': 'always'
+      }
+    ],
+
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        'devDependencies': true,
+        'optionalDependencies': false,
+        'peerDependencies': false
+      }
+    ],
+
+    'no-param-reassign': 0,
+    'no-underscore-dangle': 0,
+    'no-use-before-define': 0,
+    'no-console': 0,
+
+
+    'prettier/prettier': [
+      'error',
+      {
+        'printWidth': 120,
+        'semi': true,
+        'singleQuote': true,
+        'tabWidth': 2,
+        'trailingComma': 'none',
+        'arrowParens': 'avoid',
+        'useTabs': false
       }
     ]
   },
