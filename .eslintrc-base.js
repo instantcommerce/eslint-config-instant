@@ -3,8 +3,8 @@
 module.exports = {
   root: true,
   parser: 'babel-eslint',
-  extends: ['prettier/@typescript-eslint', 'prettier/react', 'prettier'],
-  plugins: ['import', 'jsx-a11y', 'react', 'react-hooks', 'prettier'],
+  extends: ['prettier'],
+  plugins: ['import', 'prettier'],
 
   env: {
     browser: true,
@@ -23,9 +23,6 @@ module.exports = {
   },
 
   settings: {
-    react: {
-      version: 'detect',
-    },
     'import/resolver': {
       alias: [
         ['~', './'],
@@ -33,20 +30,6 @@ module.exports = {
     },
   },
   overrides: [
-    {
-      files: [
-        '*.stories.js',
-        '*.stories.tsx',
-        '*.stories.ts',
-        '*.test.tsx',
-        '*.test.ts',
-        'test-utils.tsx',
-      ],
-      rules: {
-        'import/no-extraneous-dependencies': 'off',
-        'import/named': 'off', //@todo fix fireEvent not found in test-utils
-      },
-    },
     {
       files: ['**/*.ts?(x)'],
       parser: '@typescript-eslint/parser',
@@ -248,53 +231,6 @@ module.exports = {
     'import/no-amd': 'error',
     'import/no-webpack-loader-syntax': 'error',
 
-    // https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules
-    'react/forbid-foreign-prop-types': ['error', { allowInPropTypes: true }],
-    'react/jsx-no-comment-textnodes': 'error',
-    'react/jsx-no-duplicate-props': 'error',
-    'react/jsx-no-target-blank': 'error',
-    'react/jsx-no-undef': 'error',
-    'react/jsx-pascal-case': [
-      'error',
-      {
-        allowAllCaps: true,
-        ignore: [],
-      },
-    ],
-    'react/jsx-uses-react': 'error',
-    'react/jsx-uses-vars': 'error',
-    'react/no-danger-with-children': 'error',
-    // Disabled because of undesirable warnings
-    // See https://github.com/facebook/create-react-app/issues/5204 for
-    // blockers until its re-enabled
-    // 'react/no-deprecated': 'warn',
-    'react/no-direct-mutation-state': 'error',
-    'react/no-is-mounted': 'error',
-    'react/no-typos': 'error',
-    // 'react/react-in-jsx-scope': 'error',
-    'react/require-render-return': 'error',
-    'react/style-prop-object': 'error',
-
-    // https://github.com/evcohen/eslint-plugin-jsx-a11y/tree/master/docs/rules
-    'jsx-a11y/accessible-emoji': 'error',
-    'jsx-a11y/alt-text': 'error',
-    'jsx-a11y/anchor-has-content': 'error',
-    'jsx-a11y/aria-activedescendant-has-tabindex': 'error',
-    'jsx-a11y/aria-props': 'error',
-    'jsx-a11y/aria-proptypes': 'error',
-    'jsx-a11y/aria-role': ['error', { ignoreNonDOM: true }],
-    'jsx-a11y/aria-unsupported-elements': 'error',
-    'jsx-a11y/heading-has-content': 'error',
-    'jsx-a11y/iframe-has-title': 'error',
-    'jsx-a11y/img-redundant-alt': 'error',
-    'jsx-a11y/no-access-key': 'error',
-    'jsx-a11y/no-distracting-elements': 'error',
-    'jsx-a11y/no-redundant-roles': 'error',
-    'jsx-a11y/role-has-required-aria-props': 'error',
-    'jsx-a11y/role-supports-aria-props': 'error',
-    'jsx-a11y/scope': 'error',
-    // https://github.com/facebook/react/tree/master/packages/eslint-plugin-react-hooks
-    'react-hooks/rules-of-hooks': 'error',
     'import/order': [
       'error',
       {
