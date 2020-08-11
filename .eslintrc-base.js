@@ -1,11 +1,6 @@
 // inspired by eslint-config-react-app and eslint-config-airbnb
 
 module.exports = {
-  root: true,
-  parser: 'babel-eslint',
-  extends: ['prettier'],
-  plugins: ['import', 'prettier'],
-
   env: {
     browser: true,
     commonjs: true,
@@ -14,21 +9,11 @@ module.exports = {
     node: true,
   },
 
-  parserOptions: {
-    ecmaVersion: 2018,
-    sourceType: 'module',
-    ecmaFeatures: {
-      jsx: true,
-    },
-  },
+  extends: ['prettier'],
+  parser: 'babel-eslint',
+  plugins: ['import', 'prettier'],
+  root: true,
 
-  settings: {
-    'import/resolver': {
-      alias: [
-        ['~', './'],
-      ],
-    },
-  },
   overrides: [
     {
       files: ['**/*.ts?(x)'],
@@ -47,18 +32,27 @@ module.exports = {
       // If adding a typescript-eslint version of an existing ESLint rule,
       // make sure to disable the ESLint rule here.
       rules: {
-        // TypeScript's `noFallthroughCasesInSwitch` option is more robust (#6906)
-        'default-case': 'off',
-        // 'tsc' already handles this (https://github.com/typescript-eslint/typescript-eslint/issues/291)
-        'no-dupe-class-members': 'off',
-        // 'tsc' already handles this (https://github.com/typescript-eslint/typescript-eslint/issues/477)
-        'no-undef': 'off',
-
         // Add TypeScript specific rules (and turn off ESLint equivalents)
         '@typescript-eslint/consistent-type-assertions': 'warn',
-        'no-array-constructor': 'off',
         '@typescript-eslint/no-array-constructor': 'warn',
-        'no-use-before-define': 'off',
+
+        '@typescript-eslint/no-unused-expressions': [
+          'error',
+          {
+            allowShortCircuit: true,
+            allowTernary: true,
+            allowTaggedTemplates: true,
+          },
+        ],
+
+        '@typescript-eslint/no-unused-vars': [
+          'warn',
+          {
+            args: 'none',
+            ignoreRestSiblings: true,
+          },
+        ],
+
         '@typescript-eslint/no-use-before-define': [
           'warn',
           {
@@ -68,37 +62,75 @@ module.exports = {
             typedefs: false,
           },
         ],
-        'no-unused-expressions': 'off',
-        '@typescript-eslint/no-unused-expressions': [
-          'error',
-          {
-            allowShortCircuit: true,
-            allowTernary: true,
-            allowTaggedTemplates: true,
-          },
-        ],
-        'no-unused-vars': 'off',
-        '@typescript-eslint/no-unused-vars': [
-          'warn',
-          {
-            args: 'none',
-            ignoreRestSiblings: true,
-          },
-        ],
-        'no-useless-constructor': 'off',
+
         '@typescript-eslint/no-useless-constructor': 'warn',
+
+        // TypeScript's `noFallthroughCasesInSwitch` option is more robust (#6906)
+        'default-case': 'off',
+
+        'no-array-constructor': 'off',
+        // 'tsc' already handles this (https://github.com/typescript-eslint/typescript-eslint/issues/291)
+        'no-dupe-class-members': 'off',
+        // 'tsc' already handles this (https://github.com/typescript-eslint/typescript-eslint/issues/477)
+        'no-undef': 'off',
+        'no-unused-expressions': 'off',
+        'no-unused-vars': 'off',
+        'no-use-before-define': 'off',
+        'no-useless-constructor': 'off',
       },
     },
   ],
 
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 2018,
+    sourceType: 'module',
+  },
+
   // NOTE: When adding rules here, you need to make sure they are compatible with
   // `typescript-eslint`, as some rules such as `no-array-constructor` aren't compatible.
   rules: {
-    // http://eslint.org/docs/rules/
     'array-callback-return': 'error',
     'default-case': ['error', { commentPattern: '^no default$' }],
     'dot-location': ['error', 'property'],
     eqeqeq: ['error', 'smart'],
+    'getter-return': 'error',
+    // https://github.com/benmosher/eslint-plugin-import/tree/master/docs/rules
+    'import/first': 'error',
+    'import/no-amd': 'error',
+    'import/no-webpack-loader-syntax': 'error',
+
+    'import/order': [
+      'error',
+      {
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
+        },
+        groups: ['builtin', 'external', ['internal', 'parent'], ['sibling', 'index']],
+        pathGroups: [
+          {
+            pattern: 'react',
+            group: 'external',
+            position: 'before',
+          },
+          {
+            pattern: '~**',
+            group: 'internal',
+            position: 'before',
+          },
+          {
+            pattern: '~**/**',
+            group: 'internal',
+            position: 'before',
+          },
+        ],
+        pathGroupsExcludedImportTypes: [],
+      },
+    ],
+
     'new-parens': 'error',
     'no-array-constructor': 'error',
     'no-caller': 'error',
@@ -152,63 +184,6 @@ module.exports = {
     // https://eslint.org/docs/user-guide/migrating-to-6.0.0#-the-no-redeclare-rule-is-now-more-strict-by-default
     'no-redeclare': ['error', { builtinGlobals: false }],
     'no-regex-spaces': 'error',
-    'no-restricted-syntax': ['error', 'WithStatement'],
-    'no-script-url': 'error',
-    'no-self-assign': 'error',
-    'no-self-compare': 'error',
-    'no-sequences': 'error',
-    'no-shadow-restricted-names': 'error',
-    'no-sparse-arrays': 'error',
-    'no-template-curly-in-string': 'error',
-    'no-this-before-super': 'error',
-    'no-throw-literal': 'error',
-    'no-undef': 'error',
-    'no-unreachable': 'error',
-    'no-unused-expressions': [
-      'error',
-      {
-        allowShortCircuit: true,
-        allowTernary: true,
-        allowTaggedTemplates: true,
-      },
-    ],
-    'no-unused-labels': 'error',
-    'no-unused-vars': [
-      'error',
-      {
-        args: 'none',
-        ignoreRestSiblings: true,
-      },
-    ],
-    'no-use-before-define': [
-      'error',
-      {
-        functions: false,
-        classes: false,
-        variables: false,
-      },
-    ],
-    'no-useless-computed-key': 'error',
-    'no-useless-concat': 'error',
-    'no-useless-constructor': 'error',
-    'no-useless-escape': 'error',
-    'no-useless-rename': [
-      'error',
-      {
-        ignoreDestructuring: false,
-        ignoreImport: false,
-        ignoreExport: false,
-      },
-    ],
-    'no-with': 'error',
-    'no-whitespace-before-property': 'error',
-    'react-hooks/exhaustive-deps': 'error',
-    'require-yield': 'error',
-    'rest-spread-spacing': ['error', 'never'],
-    strict: ['error', 'never'],
-    'unicode-bom': ['error', 'never'],
-    'use-isnan': 'error',
-    'valid-typeof': 'error',
     'no-restricted-properties': [
       'error',
       {
@@ -224,41 +199,63 @@ module.exports = {
           'Please use import() instead. More info: https://facebook.github.io/create-react-app/docs/code-splitting',
       },
     ],
-    'getter-return': 'error',
+    'no-restricted-syntax': ['error', 'WithStatement'],
+    'no-script-url': 'error',
+    'no-self-assign': 'error',
+    'no-self-compare': 'error',
+    'no-sequences': 'error',
+    'no-shadow-restricted-names': 'error',
+    'no-sparse-arrays': 'error',
+    'no-template-curly-in-string': 'error',
+    'no-this-before-super': 'error',
+    'no-throw-literal': 'error',
+    'no-undef': 'error',
+    'no-unreachable': 'error',
 
-    // https://github.com/benmosher/eslint-plugin-import/tree/master/docs/rules
-    'import/first': 'error',
-    'import/no-amd': 'error',
-    'import/no-webpack-loader-syntax': 'error',
-
-    'import/order': [
+    'no-unused-expressions': [
       'error',
       {
-        alphabetize: {
-          order: 'asc',
-          caseInsensitive: true,
-        },
-        groups: ['builtin', 'external', ['internal', 'parent'], ['sibling', 'index']],
-        pathGroups: [
-          {
-            pattern: 'react',
-            group: 'external',
-            position: 'before',
-          },
-          {
-            pattern: '~**',
-            group: 'internal',
-            position: 'before',
-          },
-          {
-            pattern: '~**/**',
-            group: 'internal',
-            position: 'before',
-          },
-        ],
-        pathGroupsExcludedImportTypes: [],
+        allowShortCircuit: true,
+        allowTernary: true,
+        allowTaggedTemplates: true,
       },
     ],
+
+    'no-unused-labels': 'error',
+
+    'no-unused-vars': [
+      'error',
+      {
+        args: 'none',
+        ignoreRestSiblings: true,
+      },
+    ],
+
+    'no-use-before-define': [
+      'error',
+      {
+        functions: false,
+        classes: false,
+        variables: false,
+      },
+    ],
+
+    'no-useless-computed-key': 'error',
+    'no-useless-concat': 'error',
+    'no-useless-constructor': 'error',
+    'no-useless-escape': 'error',
+
+    'no-useless-rename': [
+      'error',
+      {
+        ignoreDestructuring: false,
+        ignoreImport: false,
+        ignoreExport: false,
+      },
+    ],
+
+    'no-with': 'error',
+    'no-whitespace-before-property': 'error',
     "prettier/prettier": [
       "error",
       {
@@ -269,6 +266,13 @@ module.exports = {
         "trailingComma": "all",
         "useTabs": false
       }
-    ]
+    ],
+    'react-hooks/exhaustive-deps': 'error',
+    'require-yield': 'error',
+    'rest-spread-spacing': ['error', 'never'],
+    strict: ['error', 'never'],
+    'unicode-bom': ['error', 'never'],
+    'use-isnan': 'error',
+    'valid-typeof': 'error',
   },
 };
