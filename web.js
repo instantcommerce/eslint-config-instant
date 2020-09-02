@@ -1,5 +1,3 @@
-// inspired by eslint-config-react-app and eslint-config-airbnb
-
 module.exports = {
   root: true,
   parser: 'babel-eslint',
@@ -299,6 +297,7 @@ module.exports = {
     'jsx-a11y/scope': 'error',
     // https://github.com/facebook/react/tree/master/packages/eslint-plugin-react-hooks
     'react-hooks/rules-of-hooks': 'error',
+
     'import/order': [
       'error',
       {
@@ -306,7 +305,12 @@ module.exports = {
           order: 'asc',
           caseInsensitive: true,
         },
-        groups: ['builtin', 'external', ['internal', 'parent'], ['sibling', 'index']],
+        groups: [
+          'builtin',
+          'external',
+          ['internal', 'parent'],
+          ['sibling', 'index'],
+        ],
         pathGroups: [
           {
             pattern: 'react',
@@ -327,17 +331,17 @@ module.exports = {
         pathGroupsExcludedImportTypes: [],
       },
     ],
-    //prettier
-    "prettier/prettier": [
-      "error",
+
+    'prettier/prettier': [
+      'error',
       {
-        "printWidth": 80,
-        "semi": true,
-        "singleQuote": true,
-        "tabWidth": 2,
-        "trailingComma": "all",
-        "useTabs": false
-      }
-    ]
+        printWidth: 80,
+        semi: true,
+        singleQuote: true,
+        tabWidth: 2,
+        trailingComma: 'all',
+        useTabs: false,
+      },
+    ],
   },
 };
