@@ -221,7 +221,7 @@ module.exports = {
     ],
     'no-with': 'error',
     'no-whitespace-before-property': 'error',
-    'react-hooks/exhaustive-deps': 'error',
+    'react-hooks/exhaustive-deps': 'off',
     'require-yield': 'error',
     'rest-spread-spacing': ['error', 'never'],
     strict: ['error', 'never'],
