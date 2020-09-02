@@ -13,11 +13,37 @@ Once done, drop the following line in your favorite terminal:
 ```
 
 Finally add this to your package.json
+Various available packages are:
+
+- ams
+For libraries/packages/etc where /web or /node is overkill
 
 ```js
 "eslintConfig": {
   "extends": [
     "ams"
+  ]
+},
+```
+
+- ams/web
+For all things frontend
+
+```js
+"eslintConfig": {
+  "extends": [
+    "ams/web"
+  ]
+},
+```
+
+- ams/node
+For all things backend
+
+```js
+"eslintConfig": {
+  "extends": [
+    "ams/node"
   ]
 },
 ```
