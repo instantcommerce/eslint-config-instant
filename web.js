@@ -25,10 +25,7 @@ module.exports = {
       version: 'detect',
     },
     'import/resolver': {
-      node: {
-        moduleDirectory: ['node_modules', 'src/'],
-        extensions: ['.js', '.jsx', '.react.js', '.ts', '.tsx'],
-      },
+      alias: ['~*', './src/*'],
     },
   },
   overrides: [
