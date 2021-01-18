@@ -742,8 +742,8 @@ cross-spawn@^7.0.2:
 
 "cz-customizable@git+https://github.com/storyofams/tools-cz-customizable.git":
   version "0.0.0-development"
-  uid "7b23c3564982da9c85c2806693fce5d5c2a70e17"
-  resolved "git+https://github.com/storyofams/tools-cz-customizable.git#7b23c3564982da9c85c2806693fce5d5c2a70e17"
+  uid "2241bfd8499b4928bd7471492241d28a1df7cf5f"
+  resolved "git+https://github.com/storyofams/tools-cz-customizable.git#2241bfd8499b4928bd7471492241d28a1df7cf5f"
   dependencies:
     editor "1.0.0"
     find-config "1.0.0"
