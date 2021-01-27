@@ -1,9 +1,7 @@
 module.exports = {
   root: true,
-  parser: 'babel-eslint',
   extends: ['prettier/@typescript-eslint', 'prettier/react', 'prettier'],
   plugins: ['import', 'jsx-a11y', 'react', 'react-hooks', 'prettier', 'mdx/recommended'],
-
   env: {
     browser: true,
     commonjs: true,
@@ -11,7 +9,6 @@ module.exports = {
     jest: true,
     node: true,
   },
-
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: 'module',
@@ -19,7 +16,6 @@ module.exports = {
       jsx: true,
     },
   },
-
   settings: {
     react: {
       version: 'detect',
@@ -109,7 +105,6 @@ module.exports = {
       },
     },
   ],
-
   // NOTE: When adding rules here, you need to make sure they are compatible with
   // `typescript-eslint`, as some rules such as `no-array-constructor` aren't compatible.
   rules: {
@@ -244,12 +239,10 @@ module.exports = {
       },
     ],
     'getter-return': 'error',
-
     // https://github.com/benmosher/eslint-plugin-import/tree/master/docs/rules
     'import/first': 'error',
     'import/no-amd': 'error',
     'import/no-webpack-loader-syntax': 'error',
-
     // https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules
     'react/forbid-foreign-prop-types': ['error', { allowInPropTypes: true }],
     'react/jsx-no-comment-textnodes': 'error',
@@ -276,7 +269,6 @@ module.exports = {
     // 'react/react-in-jsx-scope': 'error',
     'react/require-render-return': 'error',
     'react/style-prop-object': 'error',
-
     // https://github.com/evcohen/eslint-plugin-jsx-a11y/tree/master/docs/rules
     'jsx-a11y/accessible-emoji': 'error',
     'jsx-a11y/alt-text': 'error',
@@ -297,7 +289,6 @@ module.exports = {
     'jsx-a11y/scope': 'error',
     // https://github.com/facebook/react/tree/master/packages/eslint-plugin-react-hooks
     'react-hooks/rules-of-hooks': 'error',
-
     'import/order': [
       'error',
       {
@@ -331,7 +322,6 @@ module.exports = {
         pathGroupsExcludedImportTypes: [],
       },
     ],
-
     'prettier/prettier': [
       'error',
       {
