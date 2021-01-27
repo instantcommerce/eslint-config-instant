@@ -2,7 +2,7 @@ module.exports = {
   root: true,
   parser: 'babel-eslint',
   extends: ['prettier/@typescript-eslint', 'prettier/react', 'prettier'],
-  plugins: ['import', 'jsx-a11y', 'react', 'react-hooks', 'prettier'],
+  plugins: ['import', 'jsx-a11y', 'react', 'react-hooks', 'prettier', 'mdx/recommended'],
 
   env: {
     browser: true,
