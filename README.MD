@@ -9,7 +9,7 @@ Start by removing any .eslintrc or prettierrc files in your project. (**Note tha
 Once done, drop the following line in your favorite terminal:
 
 ```bash
-yarn add @storyofams/eslint-config-ams babel-eslint eslint eslint-config-prettier eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react eslint-plugin-import eslint-import-resolver-alias eslint-plugin-react-hooks prettier --dev
+yarn add @storyofams/eslint-config-ams babel-eslint eslint eslint-config-prettier eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react eslint-plugin-import eslint-import-resolver-alias eslint-plugin-react-hooks eslint-plugin-mdx prettier --dev
 ```
 
 Finally add this to your package.json
@@ -21,7 +21,7 @@ For libraries/packages/etc where /web or /node is overkill
 ```js
 "eslintConfig": {
   "extends": [
-    "ams"
+    "@storyofams/eslint-config-ams"
   ]
 },
 ```
@@ -32,7 +32,7 @@ For all things frontend
 ```js
 "eslintConfig": {
   "extends": [
-    "ams/web"
+    "@storyofams/eslint-config-ams/web"
   ]
 },
 ```
@@ -43,7 +43,7 @@ For all things backend
 ```js
 "eslintConfig": {
   "extends": [
-    "ams/node"
+    "@storyofams/eslint-config-ams/node"
   ]
 },
 ```
