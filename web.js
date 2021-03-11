@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  extends: ['prettier/@typescript-eslint', 'prettier/react', 'prettier', 'plugin:mdx/recommended'],
+  extends: ['prettier', 'plugin:mdx/recommended'],
   plugins: ['import', 'jsx-a11y', 'react', 'react-hooks', 'prettier'],
   env: {
     browser: true,
