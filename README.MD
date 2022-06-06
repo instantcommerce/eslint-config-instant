@@ -9,7 +9,7 @@ Start by removing any .eslintrc or prettierrc files in your project. (**Note tha
 Once done, drop the following line in your favorite terminal:
 
 ```bash
-yarn add @storyofams/eslint-config-ams babel-eslint eslint eslint-config-prettier eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react eslint-plugin-import eslint-import-resolver-alias eslint-plugin-react-hooks eslint-plugin-mdx prettier --dev
+yarn add @storyofams/eslint-config-ams eslint eslint-config-prettier eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react eslint-plugin-import eslint-import-resolver-alias eslint-plugin-react-hooks eslint-plugin-mdx prettier --dev
 ```
 
 Finally add this to your package.json

@@ -54,7 +54,6 @@ module.exports = {
         ecmaFeatures: {
           jsx: true,
         },
-
         // typescript-eslint specific options
         warnOnUnsupportedTypeScriptVersion: true,
       },
@@ -296,12 +295,7 @@ module.exports = {
           order: 'asc',
           caseInsensitive: true,
         },
-        groups: [
-          'builtin',
-          'external',
-          ['internal', 'parent'],
-          ['sibling', 'index'],
-        ],
+        groups: ['builtin', 'external', ['internal', 'parent'], ['sibling', 'index']],
         pathGroups: [
           {
             pattern: 'react',
