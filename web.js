@@ -54,7 +54,6 @@ module.exports = {
         ecmaFeatures: {
           jsx: true,
         },
-
         // typescript-eslint specific options
         warnOnUnsupportedTypeScriptVersion: true,
       },
