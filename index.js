@@ -1,12 +1,5 @@
 module.exports = {
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    warnOnUnsupportedTypeScriptVersion: false,
-    sourceType: 'module',
-    jsx: true,
-    project: 'tsconfig.json',
-  },
-  extends: ['prettier/@typescript-eslint', 'prettier'],
+  extends: ['prettier'],
   plugins: ['@typescript-eslint', 'import', 'prettier'],
   settings: {
     'import/resolver': {
@@ -28,12 +21,7 @@ module.exports = {
           order: 'asc',
           caseInsensitive: true,
         },
-        groups: [
-          'builtin',
-          'external',
-          ['internal', 'parent'],
-          ['sibling', 'index'],
-        ],
+        groups: ['builtin', 'external', ['internal', 'parent'], ['sibling', 'index']],
         pathGroups: [
           {
             pattern: 'react',
