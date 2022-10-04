@@ -1,5 +1,5 @@
 {
-  "name": "@storyofams/eslint-config-ams",
+  "name": "eslint-config-instant",
   "version": "0.0.0-development",
   "main": "index.js",
   "files": [
