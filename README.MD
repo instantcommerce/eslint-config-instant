@@ -4,7 +4,7 @@ A shareable eslint config used in projects created by Instant Commerce. The esli
 
 ## Installation
 
-Start by removing any .eslintrc or prettierrc files in your project. (**Note that eslintignore and prettierignore are still needed per project**)
+Start by removing any .eslintrc or .prettierrc files in your project. (**Note that eslintignore and prettierignore are still needed per project**)
 
 Once done, drop the following line in your favorite terminal:
 
@@ -22,7 +22,7 @@ Finally add this to your package.json
 Various available packages are:
 
 - instant
-For libraries/packages/etc where /web or /node is overkill
+For libraries/packages/etc where /react or /backend is overkill
 
 ```js
 "eslintConfig": {
@@ -32,24 +32,24 @@ For libraries/packages/etc where /web or /node is overkill
 },
 ```
 
-- instant/web
+- instant/react
 For all things frontend
 
 ```js
 "eslintConfig": {
   "extends": [
-    "instant/web"
+    "instant/react"
   ]
 },
 ```
 
-- instant/node
+- instant/backend
 For all things backend
 
 ```js
 "eslintConfig": {
   "extends": [
-    "instant/node"
+    "instant/backend"
   ]
 },
 ```
