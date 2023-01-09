@@ -1,49 +1,55 @@
-# ⚙️ eslint-config-ams
+# ⚙️ eslint-config-instant
 
-A shareable eslint config used in projects created by Story of AMS. The eslint config relies on several eslint plugins and implements prettier as a rule set.
+A shareable eslint config used in projects created by Instant Commerce. The eslint config relies on several eslint plugins and implements prettier as a rule set.
 
-## installation
+## Installation
 
-Start by removing any .eslintrc or prettierrc files in your project. (**Note that eslintignore and prettierignore are still needed per project**)
+Start by removing any .eslintrc or .prettierrc files in your project. (**Note that eslintignore and prettierignore are still needed per project**)
 
 Once done, drop the following line in your favorite terminal:
 
+For frontend:
 ```bash
-yarn add @storyofams/eslint-config-ams eslint eslint-config-prettier eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react eslint-plugin-import eslint-import-resolver-alias eslint-plugin-react-hooks eslint-plugin-mdx prettier --dev
+yarn add -D eslint-config-instant eslint eslint-config-prettier eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react eslint-plugin-import eslint-import-resolver-alias eslint-plugin-react-hooks eslint-plugin-mdx prettier
+```
+
+For backend:
+```bash
+yarn add -D eslint eslint-config-prettier eslint-import-resolver-alias eslint-plugin-import eslint-plugin-prettier
 ```
 
 Finally add this to your package.json
 Various available packages are:
 
-- ams
-For libraries/packages/etc where /web or /node is overkill
+- instant
+For libraries/packages/etc where /react or /backend is overkill
 
 ```js
 "eslintConfig": {
   "extends": [
-    "@storyofams/eslint-config-ams"
+    "instant"
   ]
 },
 ```
 
-- ams/web
+- instant/react
 For all things frontend
 
 ```js
 "eslintConfig": {
   "extends": [
-    "@storyofams/eslint-config-ams/web"
+    "instant/react"
   ]
 },
 ```
 
-- ams/node
+- instant/backend
 For all things backend
 
 ```js
 "eslintConfig": {
   "extends": [
-    "@storyofams/eslint-config-ams/node"
+    "instant/backend"
   ]
 },
 ```
