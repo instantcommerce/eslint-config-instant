@@ -4,8 +4,8 @@
   "main": "index.js",
   "files": [
     "index.js",
-    "web.js",
-    "node.js"
+    "react.js",
+    "backend.js"
   ],
   "scripts": {
     "lint": "eslint .",
