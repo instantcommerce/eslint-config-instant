@@ -122,13 +122,13 @@ module.exports = {
     'prettier/prettier': [
       'error',
       {
-        printWidth: 120,
         semi: true,
-        singleQuote: true,
         tabWidth: 2,
-        trailingComma: 'none',
         useTabs: false,
+        printWidth: 120,
+        singleQuote: true,
         arrowParens: 'avoid',
+        trailingComma: 'none',
       },
     ],
   },
