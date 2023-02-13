@@ -63,7 +63,22 @@ module.exports = {
     'no-param-reassign': 0,
     'no-underscore-dangle': 0,
     'no-use-before-define': 0,
-    'no-console': 0,
+    'no-console': ['error', { allow: ['error'] }],
+    'padding-line-between-statements': 'off',
+    '@typescript-eslint/padding-line-between-statements': [
+      'error',
+      // blank line before return
+      { blankLine: 'always', prev: '*', next: 'return' },
+      // blank line before and after block like statements
+      { blankLine: 'always', prev: '*', next: 'block-like' },
+      { blankLine: 'always', prev: 'block-like', next: '*' },
+      // blank line before and after function declarations
+      { blankLine: 'always', prev: '*', next: 'function' },
+      { blankLine: 'always', prev: 'function', next: '*' }
+    ],
+    'spaced-comment': 'error',
+    // default case in a switch needs to be last
+    'default-case-last': 'error',
 
     'import/order': [
       'error',
