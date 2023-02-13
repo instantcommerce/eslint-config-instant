@@ -10,38 +10,36 @@
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
-    "commit": "./node_modules/cz-customizable/standalone.js",
     "semantic-release": "semantic-release"
   },
   "peerDependencies": {
-    "eslint": "8.17.0",
-    "eslint-config-prettier": "8.5.0",
+    "eslint": "8.34.0",
+    "eslint-config-prettier": "8.6.0",
     "eslint-import-resolver-alias": "1.1.2",
-    "eslint-plugin-import": "2.26.0",
-    "eslint-plugin-prettier": "4.0.0",
-    "prettier": "2.6.2",
-    "typescript": "4.7.3"
+    "eslint-plugin-import": "2.27.5",
+    "eslint-plugin-prettier": "4.2.1",
+    "prettier": "2.8.4",
+    "typescript": "4.9.5"
   },
   "devDependencies": {
-    "@commitlint/cli": "17.0.2",
-    "@commitlint/config-conventional": "17.0.2",
-    "@semantic-release/changelog": "6.0.1",
-    "@typescript-eslint/eslint-plugin": "5.27.0",
-    "@typescript-eslint/parser": "5.27.0",
-    "cz-customizable": "git+https://github.com/storyofams/tools-cz-customizable.git#v6.3.2",
-    "eslint": "8.17.0",
-    "eslint-config-prettier": "8.5.0",
+    "@commitlint/cli": "17.4.3",
+    "@commitlint/config-conventional": "17.4.3",
+    "@semantic-release/changelog": "6.0.2",
+    "@typescript-eslint/eslint-plugin": "5.51.0",
+    "@typescript-eslint/parser": "5.51.0",
+    "eslint": "8.34.0",
+    "eslint-config-prettier": "8.6.0",
     "eslint-import-resolver-alias": "1.1.2",
-    "eslint-plugin-import": "2.26.0",
-    "eslint-plugin-jest": "26.5.3",
-    "eslint-plugin-jsx-a11y": "6.5.1",
-    "eslint-plugin-mdx": "1.17.0",
-    "eslint-plugin-prettier": "4.0.0",
-    "eslint-plugin-react": "7.30.0",
-    "eslint-plugin-react-hooks": "4.5.0",
-    "prettier": "2.6.2",
-    "semantic-release": "19.0.3",
-    "typescript": "4.7.3"
+    "eslint-plugin-import": "2.27.5",
+    "eslint-plugin-jest": "27.2.1",
+    "eslint-plugin-jsx-a11y": "6.7.1",
+    "eslint-plugin-mdx": "2.0.5",
+    "eslint-plugin-prettier": "4.2.1",
+    "eslint-plugin-react": "7.32.2",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "prettier": "2.8.4",
+    "semantic-release": "20.1.0",
+    "typescript": "4.9.5"
   },
   "license": "MIT",
   "publishConfig": {
@@ -51,10 +49,5 @@
     "extends": [
       "./index.js"
     ]
-  },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-customizable"
-    }
   }
 }
