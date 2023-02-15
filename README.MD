@@ -15,7 +15,7 @@ yarn add -D eslint-config-instant eslint eslint-config-prettier eslint-plugin-js
 
 For backend:
 ```bash
-yarn add -D eslint eslint-config-prettier eslint-import-resolver-alias eslint-plugin-import eslint-plugin-prettier
+yarn add -D eslint-config-instant eslint eslint-config-prettier eslint-import-resolver-alias eslint-plugin-import eslint-plugin-prettier
 ```
 
 Finally add this to your package.json

@@ -41,7 +41,6 @@ module.exports = {
 	rules: {
 		'@typescript-eslint/explicit-function-return-type': ['off'],
 		'@typescript-eslint/explicit-member-accessibility': [1],
-		'@typescript-eslint/interface-name-prefix': [0, 'never'],
 		'@typescript-eslint/no-explicit-any': 0,
 		'@typescript-eslint/no-namespace': 0,
 		'@typescript-eslint/no-inferrable-types': 0,
@@ -79,7 +78,6 @@ module.exports = {
 		'spaced-comment': 'error',
 		// default case in a switch needs to be last
 		'default-case-last': 'error',
-
 		'import/order': [
 			'error',
 			{
@@ -108,17 +106,16 @@ module.exports = {
 				pathGroupsExcludedImportTypes: [],
 			},
 		],
-
 		'prettier/prettier': [
 			'error',
 			{
-				printWidth: 120,
 				semi: true,
-				singleQuote: true,
 				tabWidth: 2,
-				trailingComma: 'none',
 				useTabs: true,
+				printWidth: 120,
+				singleQuote: true,
 				arrowParens: 'avoid',
+				trailingComma: 'none',
 			},
 		],
 	},

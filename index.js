@@ -12,8 +12,6 @@ module.exports = {
 		},
 	},
 	rules: {
-		// come up with some nice rules here
-
 		'import/order': [
 			'error',
 			{
@@ -45,12 +43,12 @@ module.exports = {
 		'prettier/prettier': [
 			'error',
 			{
-				printWidth: 100,
 				semi: true,
-				singleQuote: true,
 				tabWidth: 2,
-				trailingComma: 'all',
 				useTabs: true,
+				printWidth: 100,
+				singleQuote: true,
+				trailingComma: 'all',
 			},
 		],
 	},
