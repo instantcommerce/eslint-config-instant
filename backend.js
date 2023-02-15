@@ -41,17 +41,6 @@ module.exports = {
   rules: {
     '@typescript-eslint/explicit-function-return-type': ['off'],
     '@typescript-eslint/explicit-member-accessibility': [1],
-    '@typescript-eslint/naming-convention': [
-      'error',
-      {
-        selector: 'interface',
-        format: ['PascalCase'],
-        custom: {
-          regex: '^I[A-Z]',
-          match: false,
-        },
-      },
-    ],
     '@typescript-eslint/no-explicit-any': 0,
     '@typescript-eslint/no-namespace': 0,
     '@typescript-eslint/no-inferrable-types': 0,
