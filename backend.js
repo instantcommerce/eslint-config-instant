@@ -52,6 +52,7 @@ module.exports = {
 				svg: 'always',
 			},
 		],
+		'import/newline-after-import': ['error'],
 		'import/no-extraneous-dependencies': [
 			'error',
 			{
@@ -79,7 +80,6 @@ module.exports = {
 		'spaced-comment': 'error',
 		// default case in a switch needs to be last
 		'default-case-last': 'error',
-
 		'import/order': [
 			'error',
 			{
@@ -108,7 +108,6 @@ module.exports = {
 				pathGroupsExcludedImportTypes: [],
 			},
 		],
-
 		'prettier/prettier': [
 			'error',
 			{
@@ -116,7 +115,7 @@ module.exports = {
 				semi: true,
 				singleQuote: true,
 				tabWidth: 2,
-				trailingComma: 'none',
+				trailingComma: 'all',
 				useTabs: true,
 				arrowParens: 'avoid',
 			},
