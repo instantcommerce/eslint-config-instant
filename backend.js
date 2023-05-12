@@ -22,14 +22,6 @@ module.exports = {
 	},
 	settings: {
 		'import/resolver': {
-			alias: {
-				map: [
-					['@module', './src/modules'],
-					['@common', './src/common'],
-					['@util', './src/util'],
-				],
-				extensions: ['.js', '.ts'],
-			},
 			node: {
 				extensions: ['.js', '.ts'],
 			},
