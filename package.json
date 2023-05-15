@@ -1,6 +1,10 @@
 {
   "name": "eslint-config-instant",
   "version": "0.0.0-development",
+	"repository": {
+    "type": "git",
+    "url": "https://github.com/instantcommerce/eslint-config-instant"
+  },
   "main": "index.js",
   "files": [
     "index.js",
