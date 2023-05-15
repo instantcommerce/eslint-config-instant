@@ -52,7 +52,7 @@ module.exports = {
 				svg: 'always',
 			},
 		],
-		'import/newline-after-import': ['error'],
+		'import/newline-after-import': ['error', { considerComments: true }],
 		'import/no-extraneous-dependencies': [
 			'error',
 			{
