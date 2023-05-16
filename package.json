@@ -14,7 +14,6 @@
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
-    "commit": "./node_modules/cz-customizable/standalone.js",
     "semantic-release": "semantic-release"
   },
   "peerDependencies": {
@@ -32,7 +31,6 @@
     "@semantic-release/changelog": "6.0.1",
     "@typescript-eslint/eslint-plugin": "5.27.0",
     "@typescript-eslint/parser": "5.27.0",
-    "cz-customizable": "git+https://github.com/storyofams/tools-cz-customizable.git#v6.3.2",
     "eslint": "8.17.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-import-resolver-alias": "1.1.2",
@@ -55,10 +53,5 @@
     "extends": [
       "./index.js"
     ]
-  },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-customizable"
-    }
   }
 }
