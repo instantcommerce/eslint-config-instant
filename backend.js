@@ -37,6 +37,7 @@ module.exports = {
 		'@typescript-eslint/no-explicit-any': 0,
 		'@typescript-eslint/no-namespace': 0,
 		'@typescript-eslint/no-inferrable-types': 0,
+		'@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '_' }],
 		'import/extensions': [
 			1,
 			'never',
