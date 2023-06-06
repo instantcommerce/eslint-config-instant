@@ -60,6 +60,7 @@ module.exports = {
 		'no-underscore-dangle': 0,
 		'no-use-before-define': 0,
 		'no-console': ['error', { allow: ['error'] }],
+		'object-shorthand': 'error',
 		'padding-line-between-statements': 'off',
 		'@typescript-eslint/padding-line-between-statements': [
 			'error',
