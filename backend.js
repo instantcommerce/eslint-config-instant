@@ -59,7 +59,7 @@ module.exports = {
 		'no-param-reassign': 0,
 		'no-underscore-dangle': 0,
 		'no-use-before-define': 0,
-		'no-console': ['error', { allow: ['error'] }],
+		'no-console': ['error', { allow: ['error', 'table'] }],
 		'object-shorthand': 'error',
 		'padding-line-between-statements': 'off',
 		'@typescript-eslint/padding-line-between-statements': [
