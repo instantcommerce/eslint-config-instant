@@ -69,12 +69,15 @@
     "typescript-eslint": "^8.21.0"
   },
   "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
     "@types/eslint": "^9.6.1",
     "@types/node": "^22.10.7",
     "@types/prompts": "^2.4.9",
     "eslint": "^9.18.0",
     "jiti": "^2.6.1",
     "prettier": "^3.4.2",
+    "semantic-release": "^25.0.2",
     "tsup": "^8.3.5",
     "typescript": "^5.7.3",
     "vitest": "^2.1.8"
