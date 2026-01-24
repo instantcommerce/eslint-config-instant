@@ -1,6 +1,9 @@
 .DS_Store
 node_modules/
 
+# Build output
+dist/
+
 # Logs
 logs
 *.log
@@ -8,3 +11,15 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Test coverage
+coverage/
+
+# Misc
+*.tsbuildinfo
