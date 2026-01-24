@@ -15,9 +15,9 @@ This will guide you through setting up ESLint with interactive prompts for proje
 ### Option 2: Manual Setup
 
 ```bash
-npm install -D eslint-config-instant eslint
+pnpm add -D eslint-config-instant eslint
 # For TypeScript projects:
-npm install -D typescript
+pnpm add -D typescript
 ```
 
 Create `eslint.config.ts`:
@@ -227,11 +227,11 @@ Only requires `eslint-config-instant` and `eslint` (and `typescript` for TS proj
 ### Migration Steps
 
 1. **Remove old config** - Delete `.eslintrc`, `.eslintrc.js`, or `eslintConfig` from `package.json`
-2. **Install new version** - `npm install -D eslint-config-instant@latest eslint`
+2. **Install new version** - `pnpm add -D eslint-config-instant@latest eslint`
 3. **Create `eslint.config.ts`** - Use the examples above
 4. **Remove old dependencies** - Uninstall old peer dependencies:
    ```bash
-   npm uninstall eslint-config-prettier eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react eslint-plugin-import eslint-import-resolver-alias eslint-plugin-react-hooks eslint-plugin-mdx
+   pnpm remove eslint-config-prettier eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react eslint-plugin-import eslint-import-resolver-alias eslint-plugin-react-hooks eslint-plugin-mdx
    ```
 5. **Update scripts** - Your `package.json` scripts should still work:
    ```json
@@ -249,14 +249,14 @@ Only requires `eslint-config-instant` and `eslint` (and `typescript` for TS proj
 
 Make sure you've installed the package:
 ```bash
-npm install -D eslint-config-instant eslint
+pnpm add -D eslint-config-instant eslint
 ```
 
 ### TypeScript errors in `eslint.config.ts`
 
 Ensure you have TypeScript installed:
 ```bash
-npm install -D typescript
+pnpm add -D typescript
 ```
 
 ### Import resolution errors

@@ -23,3 +23,7 @@ coverage/
 
 # Misc
 *.tsbuildinfo
+
+# Other package managers (using pnpm)
+package-lock.json
+yarn.lock
