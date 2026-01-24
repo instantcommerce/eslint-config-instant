@@ -37,10 +37,8 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN_ESLINT }}
         run: |
-          echo "Token length: ${#NPM_TOKEN}"
           echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
           echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
-          npm whoami || echo "whoami failed - token may be invalid"
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
