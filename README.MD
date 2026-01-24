@@ -4,6 +4,16 @@ A modern, shareable ESLint flat config for Instant Commerce projects. Built with
 
 ## Quick Start
 
+### Option 1: Interactive Setup (Recommended)
+
+```bash
+npx eslint-config-instant init
+```
+
+This will guide you through setting up ESLint with interactive prompts for project type, TypeScript, aliases, and more.
+
+### Option 2: Manual Setup
+
 ```bash
 npm install -D eslint-config-instant eslint
 # For TypeScript projects:
