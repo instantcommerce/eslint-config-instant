@@ -107,14 +107,14 @@ async function init() {
 
   console.log(`\n✅ Created ${filename}`);
   console.log('\nNext steps:');
-  console.log('  1. Run your linter: npm run lint');
-  console.log('  2. Fix issues: npm run lint -- --fix');
+  console.log('  1. Run your linter: pnpm lint');
+  console.log('  2. Fix issues: pnpm lint --fix');
 
   if (!fs.existsSync(path.join(process.cwd(), 'node_modules', 'eslint-config-instant'))) {
     console.log('\n⚠️  Don\'t forget to install dependencies:');
-    console.log('  npm install -D eslint-config-instant eslint');
+    console.log('  pnpm add -D eslint-config-instant eslint');
     if (options.typescript) {
-      console.log('  npm install -D typescript');
+      console.log('  pnpm add -D typescript');
     }
   }
 
