@@ -27,3 +27,5 @@ coverage/
 # Other package managers (using pnpm)
 package-lock.json
 yarn.lock
+
+.cursor/
