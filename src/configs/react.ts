@@ -65,6 +65,39 @@ export function createReactConfig(options: InstantConfig = {}): FlatConfigArray 
         'react/self-closing-comp': 'error',
       },
     },
+
+    // Import ordering with React at the top
+    {
+      files: ['**/*.{js,jsx,ts,tsx}'],
+      rules: {
+        'import-x/order': [
+          'error',
+          {
+            groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+            pathGroups: [
+              {
+                pattern: 'react',
+                group: 'external',
+                position: 'before',
+              },
+              {
+                pattern: 'react-dom',
+                group: 'external',
+                position: 'before',
+              },
+              {
+                pattern: 'react-dom/**',
+                group: 'external',
+                position: 'before',
+              },
+            ],
+            pathGroupsExcludedImportTypes: ['react', 'react-dom'],
+            'newlines-between': 'always',
+            alphabetize: { order: 'asc', caseInsensitive: true },
+          },
+        ],
+      },
+    },
   ];
 
   // Add accessibility rules if enabled
