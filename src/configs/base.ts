@@ -58,14 +58,14 @@ export function createBaseConfig(options: InstantConfig = {}): FlatConfigArray {
 					'error',
 					{ prefer: 'type-imports', fixStyle: 'inline-type-imports' },
 				],
-			'@typescript-eslint/no-unused-vars': [
-				'warn',
-				{
-					args: 'none',
-					ignoreRestSiblings: true,
-					varsIgnorePattern: '_',
-				},
-			],
+				'@typescript-eslint/no-unused-vars': [
+					'warn',
+					{
+						args: 'none',
+						ignoreRestSiblings: true,
+						varsIgnorePattern: '_',
+					},
+				],
 				'@typescript-eslint/no-explicit-any': 'warn',
 				'@typescript-eslint/no-empty-object-type': 'off',
 				'@typescript-eslint/no-namespace': 'off',
