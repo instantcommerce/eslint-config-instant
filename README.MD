@@ -26,7 +26,7 @@ Create `eslint.config.ts`:
 import { instant } from 'eslint-config-instant';
 
 export default instant({
-  type: 'react', // or 'backend' or 'library'
+	type: 'react', // or 'backend' or 'library'
 });
 ```
 
@@ -37,6 +37,7 @@ That's it! All plugins are bundled - no need to install 10+ packages.
 ### React (`type: 'react'`)
 
 Full React/Next.js/Remix setup with:
+
 - React & React Hooks rules
 - JSX accessibility (a11y) rules
 - TypeScript support
@@ -47,13 +48,14 @@ Full React/Next.js/Remix setup with:
 import { instant } from 'eslint-config-instant';
 
 export default instant({
-  type: 'react',
+	type: 'react',
 });
 ```
 
 ### Backend (`type: 'backend'`)
 
 Node.js backend configuration with:
+
 - Node.js best practices
 - TypeScript support
 - Import ordering
@@ -64,13 +66,14 @@ Node.js backend configuration with:
 import { instant } from 'eslint-config-instant';
 
 export default instant({
-  type: 'backend',
+	type: 'backend',
 });
 ```
 
 ### Library (`type: 'library'`)
 
 Minimal config for publishable packages:
+
 - TypeScript support
 - Import ordering
 - Prettier integration
@@ -79,7 +82,7 @@ Minimal config for publishable packages:
 import { instant } from 'eslint-config-instant';
 
 export default instant({
-  type: 'library',
+	type: 'library',
 });
 ```
 
@@ -93,12 +96,12 @@ Configure import aliases for your project:
 import { instant } from 'eslint-config-instant';
 
 export default instant({
-  type: 'react',
-  aliases: {
-    '~components': './src/components',
-    '~hooks': './src/hooks',
-    '@lib': './src/lib',
-  },
+	type: 'react',
+	aliases: {
+		'~components': './src/components',
+		'~hooks': './src/hooks',
+		'@lib': './src/lib',
+	},
 });
 ```
 
@@ -112,8 +115,8 @@ Specify custom TypeScript config path(s):
 import { instant } from 'eslint-config-instant';
 
 export default instant({
-  type: 'react',
-  tsconfig: './tsconfig.app.json', // or ['./tsconfig.app.json', './tsconfig.node.json']
+	type: 'react',
+	tsconfig: './tsconfig.app.json', // or ['./tsconfig.app.json', './tsconfig.node.json']
 });
 ```
 
@@ -125,12 +128,12 @@ Enable/disable specific rule sets:
 import { instant } from 'eslint-config-instant';
 
 export default instant({
-  type: 'react',
-  features: {
-    a11y: true,        // JSX accessibility rules (default: true for react)
-    mdx: false,        // MDX file support (default: false)
-    vitest: false,     // Vitest rules (default: false)
-  },
+	type: 'react',
+	features: {
+		a11y: true, // JSX accessibility rules (default: true for react)
+		mdx: false, // MDX file support (default: false)
+		vitest: false, // Vitest rules (default: false)
+	},
 });
 ```
 
@@ -142,8 +145,8 @@ Add additional ignore patterns:
 import { instant } from 'eslint-config-instant';
 
 export default instant({
-  type: 'react',
-  ignores: ['**/generated/**', '**/*.generated.ts'],
+	type: 'react',
+	ignores: ['**/generated/**', '**/*.generated.ts'],
 });
 ```
 
@@ -153,11 +156,11 @@ This config includes `eslint-config-prettier` to disable ESLint rules that confl
 
 We export team-specific Prettier configs for use in `.prettierrc.js`:
 
-| Preset | `printWidth` | `arrowParens` |
-|--------|--------------|---------------|
-| Base/Library | 100 | `always` |
-| React | 80 | `always` |
-| Backend | 120 | `avoid` |
+| Preset       | `printWidth` | `arrowParens` |
+| ------------ | ------------ | ------------- |
+| Base/Library | 100          | `always`      |
+| React        | 80           | `always`      |
+| Backend      | 120          | `avoid`       |
 
 All presets share: `semi: true`, `singleQuote: true`, `tabWidth: 2`, `trailingComma: 'all'`, `useTabs: true`
 
@@ -184,28 +187,23 @@ export default basePrettierOptions;
 
 ```json
 {
-  "editor.formatOnSave": true,
-  "[javascript]": {
-    "editor.formatOnSave": false
-  },
-  "[javascriptreact]": {
-    "editor.formatOnSave": false
-  },
-  "[typescript]": {
-    "editor.formatOnSave": false
-  },
-  "[typescriptreact]": {
-    "editor.formatOnSave": false
-  },
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
-  },
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ]
+	"editor.formatOnSave": true,
+	"[javascript]": {
+		"editor.formatOnSave": false
+	},
+	"[javascriptreact]": {
+		"editor.formatOnSave": false
+	},
+	"[typescript]": {
+		"editor.formatOnSave": false
+	},
+	"[typescriptreact]": {
+		"editor.formatOnSave": false
+	},
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit"
+	},
+	"eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"]
 }
 ```
 
@@ -216,9 +214,9 @@ export default basePrettierOptions;
 ```json
 // package.json
 {
-  "eslintConfig": {
-    "extends": ["instant/react"]
-  }
+	"eslintConfig": {
+		"extends": ["instant/react"]
+	}
 }
 ```
 
@@ -231,7 +229,7 @@ Required installing 10+ peer dependencies manually.
 import { instant } from 'eslint-config-instant';
 
 export default instant({
-  type: 'react',
+	type: 'react',
 });
 ```
 
@@ -249,10 +247,10 @@ Only requires `eslint-config-instant` and `eslint` (and `typescript` for TS proj
 5. **Update scripts** - Your `package.json` scripts should still work:
    ```json
    {
-     "scripts": {
-       "lint": "eslint .",
-       "lint:fix": "eslint . --fix"
-     }
+   	"scripts": {
+   		"lint": "eslint .",
+   		"lint:fix": "eslint . --fix"
+   	}
    }
    ```
 
@@ -261,6 +259,7 @@ Only requires `eslint-config-instant` and `eslint` (and `typescript` for TS proj
 ### "Cannot find module 'eslint-config-instant'"
 
 Make sure you've installed the package:
+
 ```bash
 pnpm add -D eslint-config-instant eslint
 ```
@@ -268,6 +267,7 @@ pnpm add -D eslint-config-instant eslint
 ### TypeScript errors in `eslint.config.ts`
 
 Ensure you have TypeScript installed:
+
 ```bash
 pnpm add -D typescript
 ```
@@ -278,12 +278,12 @@ The config uses `eslint-import-resolver-typescript` which reads your `tsconfig.j
 
 ```json
 {
-  "compilerOptions": {
-    "paths": {
-      "~components/*": ["./src/components/*"],
-      "~hooks/*": ["./src/hooks/*"]
-    }
-  }
+	"compilerOptions": {
+		"paths": {
+			"~components/*": ["./src/components/*"],
+			"~hooks/*": ["./src/hooks/*"]
+		}
+	}
 }
 ```
 
