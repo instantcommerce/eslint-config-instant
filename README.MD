@@ -149,20 +149,33 @@ export default instant({
 
 ### Prettier Configuration
 
-The config includes `eslint-config-prettier` to disable conflicting rules. For formatting, use Prettier separately:
+This config includes `eslint-config-prettier` to disable ESLint rules that conflict with Prettier. Run Prettier separately for formatting.
 
-**Option 1: Use exported Prettier config**
+We export team-specific Prettier configs for use in `.prettierrc.js`:
 
-Create `.prettierrc.js`:
+| Preset | `printWidth` | `arrowParens` |
+|--------|--------------|---------------|
+| Base/Library | 100 | `always` |
+| React | 80 | `always` |
+| Backend | 120 | `avoid` |
+
+All presets share: `semi: true`, `singleQuote: true`, `tabWidth: 2`, `trailingComma: 'all'`, `useTabs: true`
 
 ```javascript
-import { prettierConfig } from 'eslint-config-instant/prettier';
-export default prettierConfig;
+// .prettierrc.js
+
+// For React projects
+import { reactPrettierOptions } from 'eslint-config-instant';
+export default reactPrettierOptions;
+
+// For Backend projects
+import { backendPrettierOptions } from 'eslint-config-instant';
+export default backendPrettierOptions;
+
+// For Library/Base projects
+import { basePrettierOptions } from 'eslint-config-instant';
+export default basePrettierOptions;
 ```
-
-**Option 2: Custom Prettier config**
-
-Create your own `.prettierrc.js` with your preferred settings.
 
 ## VS Code Setup
 

@@ -1,20 +1,38 @@
 import type { PrettierOptions } from './types.js';
 
 /**
- * Default Prettier configuration for Instant projects.
- * Use in .prettierrc.js:
- *
- * ```js
- * import { prettierConfig } from 'eslint-config-instant/prettier';
- * export default prettierConfig;
- * ```
+ * Base Prettier options (printWidth: 100)
  */
-export const prettierConfig: PrettierOptions = {
-  printWidth: 100,
-  singleQuote: true,
-  trailingComma: 'all',
-  tabWidth: 2,
-  semi: true,
-  arrowParens: 'always',
-  bracketSpacing: true,
+export const basePrettierOptions: PrettierOptions = {
+	printWidth: 100,
+	semi: true,
+	singleQuote: true,
+	tabWidth: 2,
+	trailingComma: 'all',
+	useTabs: true,
+};
+
+/**
+ * React/Frontend Prettier options (printWidth: 80)
+ */
+export const reactPrettierOptions: PrettierOptions = {
+	printWidth: 80,
+	semi: true,
+	singleQuote: true,
+	tabWidth: 2,
+	trailingComma: 'all',
+	useTabs: true,
+};
+
+/**
+ * Backend Prettier options (printWidth: 120, arrowParens: avoid)
+ */
+export const backendPrettierOptions: PrettierOptions = {
+	printWidth: 120,
+	semi: true,
+	singleQuote: true,
+	tabWidth: 2,
+	trailingComma: 'all',
+	useTabs: true,
+	arrowParens: 'avoid',
 };

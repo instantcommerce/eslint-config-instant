@@ -4,43 +4,43 @@ import globals from 'globals';
 import type { FlatConfigArray } from '../types.js';
 
 export function createBackendConfig(): FlatConfigArray {
-  return [
-    // Node.js plugin recommended config
-    nodePlugin.configs['flat/recommended'],
+	return [
+		// Node.js plugin recommended config
+		nodePlugin.configs['flat/recommended'],
 
-    // Node.js environment and rules
-    {
-      languageOptions: {
-        globals: {
-          ...globals.node,
-        },
-      },
-      rules: {
-        // Console logging rules for backend
-        'no-console': ['error', { allow: ['warn', 'error', 'info'] }],
+		// Node.js environment and rules
+		{
+			languageOptions: {
+				globals: {
+					...globals.node,
+				},
+			},
+			rules: {
+				// Console logging rules for backend
+				'no-console': ['error', { allow: ['warn', 'error', 'info'] }],
 
-        // Node.js specific rules
-        'n/no-unsupported-features/node-builtins': 'error',
-        'n/no-unsupported-features/es-syntax': 'off', // TypeScript handles this
-        'n/no-missing-import': 'off', // TypeScript handles this
-        'n/no-unpublished-import': 'off', // Often triggers false positives
+				// Node.js specific rules
+				'n/no-unsupported-features/node-builtins': 'error',
+				'n/no-unsupported-features/es-syntax': 'off', // TypeScript handles this
+				'n/no-missing-import': 'off', // TypeScript handles this
+				'n/no-unpublished-import': 'off', // Often triggers false positives
 
-        // Prefer modern patterns
-        'n/prefer-promises/fs': 'error',
-        'n/prefer-promises/dns': 'error',
-      },
-    },
+				// Prefer modern patterns
+				'n/prefer-promises/fs': 'error',
+				'n/prefer-promises/dns': 'error',
+			},
+		},
 
-    // Disable browser globals for backend
-    {
-      languageOptions: {
-        globals: {
-          window: 'off',
-          document: 'off',
-        },
-      },
-    },
-  ] as FlatConfigArray;
+		// Disable browser globals for backend
+		{
+			languageOptions: {
+				globals: {
+					window: 'off',
+					document: 'off',
+				},
+			},
+		},
+	] as FlatConfigArray;
 }
 
 export const backend = createBackendConfig();

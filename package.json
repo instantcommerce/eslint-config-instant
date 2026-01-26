@@ -1,102 +1,102 @@
 {
-  "name": "eslint-config-instant",
-  "version": "0.0.0-development",
-  "description": "A shareable ESLint flat config for Instant Commerce projects",
-  "type": "module",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
-    },
-    "./react": {
-      "types": "./dist/configs/react.d.ts",
-      "default": "./dist/configs/react.js"
-    },
-    "./backend": {
-      "types": "./dist/configs/backend.d.ts",
-      "default": "./dist/configs/backend.js"
-    },
-    "./base": {
-      "types": "./dist/configs/base.d.ts",
-      "default": "./dist/configs/base.js"
-    },
-    "./prettier": {
-      "types": "./dist/prettier.d.ts",
-      "default": "./dist/prettier.js"
-    }
-  },
-  "types": "./dist/index.d.ts",
-  "bin": {
-    "eslint-config-instant": "./dist/cli.js"
-  },
-  "files": [
-    "dist"
-  ],
-  "engines": {
-    "node": ">=20"
-  },
-  "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "test": "vitest run",
-    "test:watch": "vitest",
-    "typecheck": "tsc --noEmit",
-    "prepublishOnly": "npm run build",
-    "semantic-release": "semantic-release"
-  },
-  "peerDependencies": {
-    "eslint": ">=9.0.0",
-    "typescript": ">=5.0.0"
-  },
-  "peerDependenciesMeta": {
-    "typescript": {
-      "optional": true
-    }
-  },
-  "dependencies": {
-    "@eslint/js": "^9.18.0",
-    "eslint-config-prettier": "^10.0.1",
-    "eslint-import-resolver-typescript": "^3.7.0",
-    "eslint-plugin-import-x": "^4.6.1",
-    "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-n": "^17.15.1",
-    "eslint-plugin-react": "^7.37.4",
-    "eslint-plugin-react-hooks": "^5.1.0",
-    "globals": "^15.14.0",
-    "prompts": "^2.4.2",
-    "typescript-eslint": "^8.21.0"
-  },
-  "devDependencies": {
-    "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/git": "^10.0.1",
-    "@types/eslint": "^9.6.1",
-    "@types/node": "^22.10.7",
-    "@types/prompts": "^2.4.9",
-    "eslint": "^9.18.0",
-    "jiti": "^2.6.1",
-    "prettier": "^3.4.2",
-    "semantic-release": "^25.0.2",
-    "tsup": "^8.3.5",
-    "typescript": "^5.7.3",
-    "vitest": "^2.1.8"
-  },
-  "keywords": [
-    "eslint",
-    "eslintconfig",
-    "eslint-config",
-    "flat-config",
-    "typescript",
-    "react",
-    "instant"
-  ],
-  "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/instantcommerce/eslint-config-instant.git"
-  }
+	"name": "eslint-config-instant",
+	"version": "0.0.0-development",
+	"description": "A shareable ESLint flat config for Instant Commerce projects",
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"default": "./dist/index.js"
+		},
+		"./react": {
+			"types": "./dist/configs/react.d.ts",
+			"default": "./dist/configs/react.js"
+		},
+		"./backend": {
+			"types": "./dist/configs/backend.d.ts",
+			"default": "./dist/configs/backend.js"
+		},
+		"./base": {
+			"types": "./dist/configs/base.d.ts",
+			"default": "./dist/configs/base.js"
+		},
+		"./prettier": {
+			"types": "./dist/prettier.d.ts",
+			"default": "./dist/prettier.js"
+		}
+	},
+	"types": "./dist/index.d.ts",
+	"bin": {
+		"eslint-config-instant": "./dist/cli.js"
+	},
+	"files": [
+		"dist"
+	],
+	"engines": {
+		"node": ">=20"
+	},
+	"scripts": {
+		"build": "tsup",
+		"dev": "tsup --watch",
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix",
+		"test": "vitest run",
+		"test:watch": "vitest",
+		"typecheck": "tsc --noEmit",
+		"prepublishOnly": "npm run build",
+		"semantic-release": "semantic-release"
+	},
+	"peerDependencies": {
+		"eslint": ">=9.0.0",
+		"typescript": ">=5.0.0"
+	},
+	"peerDependenciesMeta": {
+		"typescript": {
+			"optional": true
+		}
+	},
+	"dependencies": {
+		"@eslint/js": "^9.18.0",
+		"eslint-config-prettier": "^10.0.1",
+		"eslint-import-resolver-typescript": "^3.7.0",
+		"eslint-plugin-import-x": "^4.6.1",
+		"eslint-plugin-jsx-a11y": "^6.10.2",
+		"eslint-plugin-n": "^17.15.1",
+		"eslint-plugin-react": "^7.37.4",
+		"eslint-plugin-react-hooks": "^5.1.0",
+		"globals": "^15.14.0",
+		"prompts": "^2.4.2",
+		"typescript-eslint": "^8.21.0"
+	},
+	"devDependencies": {
+		"@semantic-release/changelog": "^6.0.3",
+		"@semantic-release/git": "^10.0.1",
+		"@types/eslint": "^9.6.1",
+		"@types/node": "^22.10.7",
+		"@types/prompts": "^2.4.9",
+		"eslint": "^9.18.0",
+		"jiti": "^2.6.1",
+		"prettier": "^3.4.2",
+		"semantic-release": "^25.0.2",
+		"tsup": "^8.3.5",
+		"typescript": "^5.7.3",
+		"vitest": "^2.1.8"
+	},
+	"keywords": [
+		"eslint",
+		"eslintconfig",
+		"eslint-config",
+		"flat-config",
+		"typescript",
+		"react",
+		"instant"
+	],
+	"license": "MIT",
+	"publishConfig": {
+		"access": "public"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/instantcommerce/eslint-config-instant.git"
+	}
 }
