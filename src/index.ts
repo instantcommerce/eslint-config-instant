@@ -1,3 +1,5 @@
+import type { Linter } from 'eslint';
+
 import { createBackendConfig } from './configs/backend.js';
 import { createBaseConfig } from './configs/base.js';
 import { createReactConfig } from './configs/react.js';
@@ -71,7 +73,7 @@ export function instant(options: InstantConfig = {}): FlatConfigArray {
 			break;
 	}
 
-	return configs;
+	return configs as Linter.Config[];
 }
 
 // Default export for convenience
