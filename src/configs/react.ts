@@ -123,4 +123,4 @@ export function createReactConfig(options: InstantConfig = {}): FlatConfigArray 
 	return configs;
 }
 
-export const reactConfig = createReactConfig();
+export const reactConfig: FlatConfigArray = createReactConfig();

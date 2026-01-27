@@ -44,4 +44,4 @@ export function createBackendConfig(): FlatConfigArray {
 	] as FlatConfigArray;
 }
 
-export const backend = createBackendConfig();
+export const backend: FlatConfigArray = createBackendConfig();

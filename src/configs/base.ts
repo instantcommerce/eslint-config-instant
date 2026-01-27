@@ -105,4 +105,4 @@ export function createBaseConfig(options: InstantConfig = {}): FlatConfigArray {
 	) as FlatConfigArray;
 }
 
-export const base = createBaseConfig();
+export const base: FlatConfigArray = createBaseConfig();
