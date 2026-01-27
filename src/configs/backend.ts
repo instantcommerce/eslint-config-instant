@@ -13,14 +13,15 @@ export function createBackendConfig(): FlatConfigArray {
 			languageOptions: {
 				globals: {
 					...globals.node,
+					...globals.es2021,
 				},
 			},
 			rules: {
 				// Console logging rules for backend
 				'no-console': ['error', { allow: ['warn', 'error', 'info'] }],
 
-				// Node.js specific rules
-				'n/no-unsupported-features/node-builtins': 'error',
+				// Node.js specific rules (targeting Node 20+)
+				'n/no-unsupported-features/node-builtins': ['error', { version: '>=20.0.0' }],
 				'n/no-unsupported-features/es-syntax': 'off', // TypeScript handles this
 				'n/no-missing-import': 'off', // TypeScript handles this
 				'n/no-unpublished-import': 'off', // Often triggers false positives

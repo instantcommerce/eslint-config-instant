@@ -53,7 +53,9 @@ export function createBaseConfig(options: InstantConfig = {}): FlatConfigArray {
 
 		// TypeScript-specific rules
 		{
+			files: ['**/*.{ts,tsx}'],
 			rules: {
+				'no-undef': 'off', // TypeScript handles undefined variable checking
 				'@typescript-eslint/consistent-type-imports': [
 					'error',
 					{ prefer: 'type-imports', fixStyle: 'inline-type-imports' },
@@ -64,6 +66,14 @@ export function createBaseConfig(options: InstantConfig = {}): FlatConfigArray {
 						args: 'none',
 						ignoreRestSiblings: true,
 						varsIgnorePattern: '_',
+					},
+				],
+				'@typescript-eslint/no-unused-expressions': [
+					'error',
+					{
+						allowShortCircuit: true,
+						allowTernary: true,
+						allowTaggedTemplates: true,
 					},
 				],
 				'@typescript-eslint/no-explicit-any': 'warn',

@@ -11,6 +11,17 @@ export function createReactConfig(options: InstantConfig = {}): FlatConfigArray 
 	const enableA11y = features.a11y !== false; // Default true for React
 
 	const configs: FlatConfigArray = [
+		// Browser globals for all files in React projects
+		{
+			files: ['**/*.{js,jsx,ts,tsx}'],
+			languageOptions: {
+				globals: {
+					...globals.browser,
+					...globals.es2021,
+				},
+			},
+		},
+
 		// React plugin recommended config
 		{
 			files: ['**/*.{jsx,tsx}'],
@@ -22,9 +33,6 @@ export function createReactConfig(options: InstantConfig = {}): FlatConfigArray 
 					ecmaFeatures: {
 						jsx: true,
 					},
-				},
-				globals: {
-					...globals.browser,
 				},
 			},
 			settings: {
@@ -46,7 +54,7 @@ export function createReactConfig(options: InstantConfig = {}): FlatConfigArray 
 			},
 			rules: {
 				...reactHooks.configs.recommended.rules,
-				'react-hooks/exhaustive-deps': 'warn',
+				'react-hooks/exhaustive-deps': 'off',
 			},
 		},
 
