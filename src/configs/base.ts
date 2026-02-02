@@ -91,6 +91,7 @@ export function createBaseConfig(options: InstantConfig = {}): FlatConfigArray {
 			},
 			rules: {
 				'no-console': ['error', { allow: ['warn', 'error'] }],
+				'no-extra-boolean-cast': 'off',
 				eqeqeq: ['error', 'smart'],
 				'no-eval': 'error',
 				'no-var': 'error',
